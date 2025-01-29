@@ -40,7 +40,7 @@ if menu == "Researcher Profile":
     # Collect basic information
     name = "Dr. Mulisa Mudau"
     field = "Meteorologist"
-        institution = "University of Pretoria"
+    institution = "University of Pretoria"
 
     # Display basic profile information
     st.write(f"**Name:** {name}")
