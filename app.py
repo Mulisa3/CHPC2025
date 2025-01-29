@@ -4,12 +4,6 @@ st.title("CHPC 2025 Training ")
 
 st.write("By Mulisa!")
 
-st.header("Number selection")
-
-number = st.slider("Pick a number", 1, 100)
-st.write(f"You picked: {number}")
-
-
 
 import streamlit as st
 import pandas as pd
