@@ -38,7 +38,7 @@ if menu == "Researcher Profile":
     st.sidebar.header("Profile Options")
 
     # Collect basic information
-    name = "Dr. Mulisa Mudau"
+    name = "Prof. Mulisa Mudau"
     field = "Meteorologist"
     institution = "University of Pretoria"
 
