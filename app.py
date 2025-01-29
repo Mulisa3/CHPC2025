@@ -13,13 +13,13 @@ menu = st.sidebar.radio(
 )
 
 # Dummy STEM data
-physics_data = pd.DataFrame({
+Climate_data = pd.DataFrame({
     "Experiment": ["Alpha Decay", "Beta Decay", "Gamma Ray Analysis", "Quark Study", "Higgs Boson"],
     "Energy (MeV)": [4.2, 1.5, 2.9, 3.4, 7.1],
     "Date": pd.date_range(start="2024-01-01", periods=5),
 })
 
-astronomy_data = pd.DataFrame({
+Meteorology_data = pd.DataFrame({
     "Celestial Object": ["Mars", "Venus", "Jupiter", "Saturn", "Moon"],
     "Brightness (Magnitude)": [-2.0, -4.6, -1.8, 0.2, -12.7],
     "Observation Date": pd.date_range(start="2024-01-01", periods=5),
@@ -38,9 +38,9 @@ if menu == "Researcher Profile":
     st.sidebar.header("Profile Options")
 
     # Collect basic information
-    name = "Dr. Jane Doe"
-    field = "Astrophysics"
-    institution = "University of Science"
+    name = "Dr. Mulisa Mudau"
+    field = "Meteorologist"
+        institution = "University of Pretoria"
 
     # Display basic profile information
     st.write(f"**Name:** {name}")
@@ -83,30 +83,30 @@ elif menu == "STEM Data Explorer":
     # Tabbed view for STEM data
     data_option = st.sidebar.selectbox(
         "Choose a dataset to explore", 
-        ["Physics Experiments", "Astronomy Observations", "Weather Data"]
+        ["Climate Experiments", "Meteorology Observations", "Weather Data"]
     )
 
-    if data_option == "Physics Experiments":
-        st.write("### Physics Experiment Data")
-        st.dataframe(physics_data)
+    if data_option == "Climate Experiments":
+        st.write("### Climate Experiment Data")
+        st.dataframe(Climate_data)
         # Add widget to filter by Energy levels
         energy_filter = st.slider("Filter by Energy (MeV)", 0.0, 10.0, (0.0, 10.0))
-        filtered_physics = physics_data[
-            physics_data["Energy (MeV)"].between(energy_filter[0], energy_filter[1])
+        filtered_Climate = Climate_data[
+            Climate_data["Energy (MeV)"].between(energy_filter[0], energy_filter[1])
         ]
         st.write(f"Filtered Results for Energy Range {energy_filter}:")
-        st.dataframe(filtered_physics)
+        st.dataframe(filtered_Climate)
 
-    elif data_option == "Astronomy Observations":
-        st.write("### Astronomy Observation Data")
-        st.dataframe(astronomy_data)
+    elif data_option == "Meteorology Observations":
+        st.write("### Meteorology Observation Data")
+        st.dataframe(Meteorology_data)
         # Add widget to filter by Brightness
         brightness_filter = st.slider("Filter by Brightness (Magnitude)", -15.0, 5.0, (-15.0, 5.0))
-        filtered_astronomy = astronomy_data[
-            astronomy_data["Brightness (Magnitude)"].between(brightness_filter[0], brightness_filter[1])
+        filtered_Meteorology = Meteorology_data[
+            Meteorology_data["Brightness (Magnitude)"].between(brightness_filter[0], brightness_filter[1])
         ]
         st.write(f"Filtered Results for Brightness Range {brightness_filter}:")
-        st.dataframe(filtered_astronomy)
+        st.dataframe(filtered_Meteorology)
 
     elif data_option == "Weather Data":
         st.write("### Weather Data")
