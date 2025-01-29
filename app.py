@@ -14,7 +14,7 @@ st.write(f"You picked: {number}")
 # My Plot of data
 
 import pandas as pd
-# import plotly.express as px
+import plotly.express as px
 import streamlit as st
 
 st.title("Title heading")
