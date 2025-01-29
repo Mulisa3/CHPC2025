@@ -52,9 +52,9 @@ elif menu == "Publications":
     st.sidebar.header("Upload and Filter")
 
     # Upload publications file
-    uploaded_file = st.file_uploader("Upload a MP3 of Publications", type="mp3")
+    uploaded_file = st.file_uploader("Upload a CSV of Publications", type="csv")
     if uploaded_file:
-        publications = pd.read_mp3(uploaded_file)
+        publications = pd.read_csv(uploaded_file)
         st.dataframe(publications)
 
         # Add filtering for year or keyword
@@ -74,7 +74,7 @@ elif menu == "Publications":
             year_counts = publications["Year"].value_counts().sort_index()
             st.bar_chart(year_counts)
         else:
-            st.write("The MP3does not have a 'Year' column to visualize trends.")
+            st.write("The CSV does not have a 'Year' column to visualize trends.")
 
 elif menu == "STEM Data Explorer":
     st.title("STEM Data Explorer")
